@@ -70,6 +70,45 @@
     </div>
 
     <script>
+        const imageMap = {
+    '51238': '51238-minirae-3000.jpg',
+    '51242': '51242-ppbrae-3000.jpg',
+    '51246': '51246-ultrarae-3000.jpg',
+    '51260': '51260-qrae-ii.jpg',
+    '51277': '51277-multirae-6228.jpg',
+    '51306': '51306-helium-leak-detector.jpg',
+    '51350': '51350-pdr-1000.jpg',
+    '51359': '51359-dusttrak2-8530.jpg',
+    '51361': '51361-dusttrak-drx-8533.jpg',
+    '51419': '51419-edge-5.jpg',
+    '51428': '51428-portacount-8038.jpg',
+    '51617': '51617-hach-2100q.jpg',
+    '51657': '51657-ysi-556.jpg',
+    '51659': '51659-ysi-pro.jpg',
+    '51666': '51666-horiba-u52.jpg',
+    '51744': '51744-ip-100.jpg',
+    '51745': '51745-ip-200.jpg',
+    '51777': '51777-isco-6712.jpg',
+    '51840': '51840-grundfos-pump.jpg',
+    '51841': '51841-grundfos-control.jpg',
+    '51860': '51860-pine-peripump.jpg',
+    '51882': '51882-qed-mp50.jpg',
+    '52051': '52051-leveltroll-700.jpg',
+    '54115': '54115-olympus-38dl.jpg',
+    '54322': '54322-niton-xl2.jpg',
+    '54746': '54746-trimble-geo7x.jpg',
+    '54882': '54882-tva-2020.jpg',
+    '55024': '55024-ysi-prodss.jpg',
+    '55264': '55264-rki-gx6000.jpg',
+    '55377': '55377-tva-2020-gps.jpg',
+    '55433': '55433-gssi-structurescan.jpg',
+    '55459': '55459-gem5000.jpg',
+    '55839': '55839-niton-xl5.jpg',
+    '55862': '55862-olympus-vanta.jpg',
+    '56029': '56029-ysi-prodss.jpg',
+    '56179': '56179-flir-gfx320.jpg',
+    '61223': '61223-qed-bladder-pump.jpg'
+};
         const products = [
             { name: "PID-MiniRAE 3000", m3: "51238", icon: "🌡️", category: "air", pfas: false, description: "VOC detection 0-15,000 ppm. Industrial hygiene, leak detection, hazmat response.", applications: ["VOC Detection", "Leak Detection"], alternatives: ["RKI GX-6000 (55264)", "MultiRAE (51277)"], ppe: ["Safety Glasses", "Chemical Gloves", "Tyvek Suit", "Booties"], equipment: ["Lamp 11.7 eV (90160)"], supplies: ["Cal Kit 100PPM (90141)", "Tedlar Bags", "Soil Jars"] },
             { name: "PID-ppbRAE 3000", m3: "51242", icon: "🔬", category: "air", pfas: false, description: "Ultra-sensitive VOC (ppb level). Indoor air quality and remediation.", applications: ["Ultra-low VOC", "Remediation"], alternatives: ["RKI GX-6000 low range"], ppe: ["Safety Glasses", "Chemical Gloves", "Tyvek Suit"], equipment: [], supplies: ["Cal Kit 10PPM ISO (94962)", "Cal Kit 100PPM (90141)", "Tedlar Bags"] },
@@ -132,10 +171,7 @@
 
             grid.innerHTML = filtered.map(p => `
                 <div class="product-card">
-                <img src="images/${p.m3}-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}.jpg" 
-                     alt="${p.name}" 
-                     style="width: 100%; height: 200px; object-fit: contain; background: #f8f9fa; border-radius: 10px; margin-bottom: 15px; padding: 10px;" 
-                     onerror="this.style.display='none'">
+                    ${imageMap[p.m3] ? `<img src="images/${imageMap[p.m3]}" alt="${p.name}" style="width: 100%; height: 200px; object-fit: contain; background: #f8f9fa; border-radius: 10px; margin-bottom: 15px; padding: 10px;" onerror="this.style.display='none'">` : ''}
                     <div class="product-header">
                         <div class="product-icon">${p.icon}</div>
                         <div class="product-title">
