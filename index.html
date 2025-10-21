@@ -186,9 +186,9 @@
                     ${p.alternatives.length > 0 ? `<div class="alternatives"><h4>⚠️ Alternatives</h4>${p.alternatives.map(a => `<div class="alt-item">${a}</div>`).join('')}</div>` : ''}
                     <div class="upsells">
                         <h4>💡 Recommended Add-ons</h4>
-${p.ppe.length > 0 ? `<div class="category-header category-ppe">🦺 PPE</div><div class="upsell-grid">${p.ppe.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
-${p.equipment.length > 0 ? `<div class="category-header category-equipment">🔧 Equipment</div><div class="upsell-grid">${p.equipment.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
-${p.supplies.length > 0 ? `<div class="category-header category-supplies">📦 Supplies</div><div class="upsell-grid">${p.supplies.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
+                        ${p.ppe.length > 0 ? `<div class="category-header category-ppe">🦺 PPE</div><div class="upsell-grid">${p.ppe.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
+                        ${p.equipment.length > 0 ? `<div class="category-header category-equipment">🔧 Equipment</div><div class="upsell-grid">${p.equipment.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
+                        ${p.supplies.length > 0 ? `<div class="category-header category-supplies">📦 Supplies</div><div class="upsell-grid">${p.supplies.map(i => `<div class="upsell-item"><div class="upsell-name">${i}</div></div>`).join('')}</div>` : ''}
                     </div>
                 </div>
             `).join('');
